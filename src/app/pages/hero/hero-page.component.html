@@ -1,7 +1,7 @@
 <hr>
 <section class="container d-flex flex-column align-items-center justify-content-center">
     <h2>Hero page</h2>
-    <h1>{{ name() }}</h1>
+    <h1>{{ name() | uppercase }}</h1>
     
     <dl>
       <td>Nombre:</td>
@@ -15,7 +15,7 @@
     
       <td>Capitalizado:</td>
       <!-- ! Intentar  -->
-      <!-- <dd> {{ 'Mostrar nombre TODO EN MAYÚSCULAS' }} </dd> -->
+      <dd> {{ capitalizeName() }} </dd>
     </dl>
 </section>
     <section class="container d-flex align-items-center justify-content-center">

@@ -1,9 +1,11 @@
-import { Component, signal } from "@angular/core";
+import { UpperCasePipe } from "@angular/common";
+import { Component, signal, computed } from "@angular/core";
 
 
 @Component({
     selector: 'hero-page',
-    templateUrl: './hero-page.component.html'
+    templateUrl: './hero-page.component.html',
+    imports: [ UpperCasePipe],
 })
 
 export class HeroPageComponent {
@@ -19,6 +21,8 @@ export class HeroPageComponent {
         this.name.set('Spiderman');
         this.age.set(22);
     }
+
+    capitalizeName = computed(() => this.name().toUpperCase());
 
     resetForm(){
         this.name.set('Iroman');
