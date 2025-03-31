@@ -1,0 +1,20 @@
+<h1 class="text-center">dragonball Page</h1>
+<hr>
+
+<section class="row justify-content-center section">
+    <div class="col-12 col-sm-6 pa-5">
+        <h3 class="pb-3">Agregar:</h3>
+        <input type="text" class="form-control" placeholder="Nombre personaje" #txtPersonaje>
+        <input type="number" class="form-control mt-3" placeholder="Poder" #txtPoder />
+        <button class="btn btn-primary mt-3">Agregar</button>
+    </div>
+
+    <div class="col-12 col-sm-6">
+        <ol>
+            @for (item of characters(); track $index) {
+                <li>Character: {{item.name}} - the current power  is: {{item.power}}</li>
+            }
+            
+        </ol>
+    </div>
+</section>
