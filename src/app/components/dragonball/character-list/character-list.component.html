@@ -1,0 +1,13 @@
+<h3>Listado fuertes</h3>
+<ul>
+    @for (item of characters(); track $index) {
+    @if (item.power > 500 ) {
+    <li>Character: {{item.name}} -
+        <span [class.text-danger]=" item.power > 9000" [class.text-primary]=" item.power < 9000">
+            {{item.power}}
+        </span>
+    </li>
+    <!-- <p>{{total().update }}</p> -->
+    }
+    }
+</ul>

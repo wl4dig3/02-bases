@@ -1,0 +1,18 @@
+<h1 class="text-center">Dragonball Super </h1>
+<hr>
+
+<section class="row justify-content-center section">
+    <div class="col-12 col-sm-6 pa-5">
+        <h3 class="pb-3">Agregar: {{name()}}</h3>
+        <input type="text" class="form-control" placeholder="Nombre personaje" [value]="name()"  #txtName (change)="name.set(txtName.value)" (input)="name.set(txtName.value)"/>
+        <h3>{{name()}}</h3>
+        <input type="number" class="form-control mt-3" placeholder="Poder" [value]="power()" #txtPower (change)="power.set(txtPower.valueAsNumber)" (input)="power.set(txtPower.valueAsNumber)" />
+        <h3>{{power()}}</h3>
+        <button (click)="addCharacter()" class="btn btn-primary mt-3">Agregar</button>
+    </div>
+
+    <div class="col-12 col-sm-6">
+        <dragonball-character-list [characters]="characters()" />
+       
+    </div>
+</section>
