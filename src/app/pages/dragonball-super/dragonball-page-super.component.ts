@@ -24,7 +24,7 @@ export class DragonballPageSuperComponent {
   if (!this.name() || !this.power() || this.power() < 0) return;
     const newCharacter: Character = { id: this.characters().length + 1, name: this.name(), power: this.power() };
     // this.characters().push(newCharacter); esta es la manera antigua de hacerla
-    this.characters.update((list)  => [...list, newCharacter]);
+    // this.characters.update((list)  => [...list, newCharacter]);
     console.log(newCharacter);
     console.log(this.characters());
     this.resesrFields();
