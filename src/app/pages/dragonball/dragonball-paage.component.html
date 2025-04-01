@@ -3,18 +3,26 @@
 
 <section class="row justify-content-center section">
     <div class="col-12 col-sm-6 pa-5">
-        <h3 class="pb-3">Agregar:</h3>
-        <input type="text" class="form-control" placeholder="Nombre personaje" #txtPersonaje>
-        <input type="number" class="form-control mt-3" placeholder="Poder" #txtPoder />
-        <button class="btn btn-primary mt-3">Agregar</button>
+        <h3 class="pb-3">Agregar: {{name()}}</h3>
+        <input type="text" class="form-control" placeholder="Nombre personaje" [value]="name()"  #txtName (change)="name.set(txtName.value)" (input)="name.set(txtName.value)"/>
+        <h3>{{name()}}</h3>
+        <input type="number" class="form-control mt-3" placeholder="Poder" [value]="power()" #txtPower (change)="power.set(txtPower.valueAsNumber)" (input)="power.set(txtPower.valueAsNumber)" />
+        <h3>{{power()}}</h3>
+        <button (click)="addCharacter()" class="btn btn-primary mt-3">Agregar</button>
     </div>
 
     <div class="col-12 col-sm-6">
-        <ol>
+        <ul>
             @for (item of characters(); track $index) {
-                <li>Character: {{item.name}} - the current power  is: {{item.power}}</li>
+            @if (item.power > 500 ) {
+            <li>Character: {{item.name}} -
+                <span [class.text-danger]=" item.power > 9000" [class.text-primary]=" item.power < 9000">
+                    {{item.power}}
+                </span>
+            </li>
+            <!-- <p>{{total().update }}</p> -->
             }
-            
-        </ol>
+            }
+        </ul>
     </div>
 </section>
