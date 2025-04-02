@@ -1,0 +1,13 @@
+<section class="container">
+    <h1>Character add aqui</h1>
+
+    <h3 class="pb-3">Agregar: {{name()}}</h3>
+    <input type="text" class="form-control" placeholder="Nombre personaje" [value]="name()" #txtName
+        (input)="name.set(txtName.value)" />
+    <h3>{{name()}}</h3>
+    <input type="number" class="form-control mt-3" placeholder="Poder" [value]="power()" #txtPower
+        (input)="power.set(txtPower.valueAsNumber)" />
+    <h3>{{power()}}</h3>
+    <button (click)="addCharacter()" class="btn btn-primary mt-3">Agregar</button>
+
+</section>
