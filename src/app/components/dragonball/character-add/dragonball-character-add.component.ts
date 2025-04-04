@@ -8,7 +8,7 @@ import type { Character } from '../../../interfaces/character.interface';
 
 export class CharacterAddComponent {
 
-// characters = input.required<Character[]>();
+
 
 name = signal('Iroman W');
 power = signal(4500);
