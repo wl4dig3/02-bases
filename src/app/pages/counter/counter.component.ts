@@ -6,10 +6,23 @@ import { Component, signal, ChangeDetectionStrategy } from "@angular/core";
     selector: 'app-counter',
     templateUrl: './counter.component.html',
     styles: `
+    
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     button {
         margin: 5px;
         width: 100px;
-    }`,
+    }
+    hr{
+        border: 1px solid black;
+        width: 90%;
+        margin-left: 5%;
+    }
+    `,
 })
 export class CounterComponent {
     counterSignal= signal(5);
